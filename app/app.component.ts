@@ -19,10 +19,17 @@ export class AppComponent {
   public cartCDs: CD[];
   constructor() {
     this.allCDs = [
-      new CD("Last Kind Words / Skinny Leg Blues","Geeshie Wiley","Blues",2500),
-      new CD("Demon Days","Gorillaz","Hip-Hop",1000),
-      new CD("Plastic Beach","Gorillaz","Hip-Hop",900),
-      new CD("HELP","The Beatles","Rock",700),
+      new CD("The Times They Are a-Changin'","Bob Dylan","Folk",1500),
+      new CD("Highway 61 Revisited","Bob Dylan","Folk",1500),
+      new CD("The Basement Tapes","Bob Dylan","Folk",2500),
+      new CD("Gorillaz","Gorillaz","Rock",1000),
+      new CD("Demon Days","Gorillaz","Rock",1000),
+      new CD("Plastic Beach","Gorillaz","Pop",900),
+      new CD("The Fall","Gorillaz","Electronic",900),
+      new CD("Surrealistic Pillow","Jefferson Airplane","Rock",1000),
+      new CD("HELP","The Beatles","Rock",900),
+      new CD("Abbey Road","The Beatles","Rock",1000),
+      new CD("Sgt. Pepper's Lonely Hearts Club Band","The Beatles","Rock",700),
       new CD("The Beatles","The Beatles","Rock",700),
       new CD("My Beautiful Dark Twisted Fantasy","Kanye West","Hip-Hop",1500)
     ];

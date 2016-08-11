@@ -1,11 +1,13 @@
-h1 {
-  color: blue;
+body {
+  background-color: #7590B0;
 }
 my-app {
   height: 100%;
 }
 .container {
-  height: 100%;
+  height: 90%;
+  background-color: white;
+  margin-top: 30px;
 }
 .store-front-list {
   height: 40%;
