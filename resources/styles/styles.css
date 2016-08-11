@@ -1,3 +1,35 @@
 h1 {
   color: blue;
 }
+my-app {
+  height: 100%;
+}
+.container {
+  height: 100%;
+}
+.store-front-list {
+  height: 40%;
+  overflow-y: scroll;
+}
+store-front label {
+  margin-left: 10px;
+}
+.cart-list {
+  max-height: 30%;
+  overflow-y: scroll;
+}
+cd-display {
+  width: 100%;
+}
+cd-display button {
+  margin-right: 20px;
+  margin-top: 15px;
+  min-width: 100%;
+}
+.cd-price {
+  text-align: center;
+}
+hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

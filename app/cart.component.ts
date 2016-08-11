@@ -8,26 +8,30 @@ import { CD } from './cd.model';
   directives: [CDDisplayComponent],
   template: `
     <h3>Cart: {{CDs.length}} Items</h3>
-    <cd-display *ngFor="#cd of CDs"
-      [CD]="cd"
-      [inCart]="true"
-      (onAddRemove)="removeCD($event)">
-    </cd-display>
+    <div class="cart-list">
+      <cd-display class="row" *ngFor="#cd of CDs"
+        [CD]="cd"
+        [inCart]="true"
+        (onAddRemove)="removeCD($event)">
+      </cd-display>
+    </div>
+    <hr>
     <h4>Total: {{getPrice()}}</h4>
     <hr>
     `
 })
 export class CartComponent {
   public CDs: CD[];
-  getPrice() {
+  getPrice(): string {
+    var priceCalculator = new CDDisplayComponent();
     if(this.CDs.length===0) {
-      return 0;
+      return priceCalculator.moneyFormat(0);
     }
     var totalPrice = 0;
     for(var cd of this.CDs) {
       totalPrice += cd.price;
     }
-    return totalPrice;
+    return priceCalculator.moneyFormat(totalPrice);
   }
   removeCD(cd: CD) {
     this.CDs.splice(this.CDs.indexOf(cd),1);

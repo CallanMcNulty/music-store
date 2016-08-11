@@ -9,7 +9,7 @@ import { CD } from './cd.model';
   template: `
     <div class = "container">
       <h1>Music Store</h1>
-      <store-front [CDs]="allCDs" (onAdd)="addToCart($event)"></store-front>
+      <store-front class="form-inline" [CDs]="allCDs" (onAdd)="addToCart($event)"></store-front>
       <cart [CDs]="cartCDs"></cart>
     </div>
     `

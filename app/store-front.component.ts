@@ -12,21 +12,25 @@ import { CD } from './cd.model';
   directives: [CDDisplayComponent],
   template: `
     <hr>
-      <h3>Available{{displayArtist==="All"?"":": "+displayArtist}}</h3>
-      <cd-display *ngFor="#cd of CDs | genre:displayGenre | artist:displayArtist"
+    <h3>Available{{displayArtist==="All"?"":": "+displayArtist}}</h3>
+    <div class="store-front-list">
+      <cd-display class="row" *ngFor="#cd of CDs | genre:displayGenre | artist:displayArtist"
       [CD]="cd"
       [inCart]="false"
       (onAddRemove)="addToCart($event)">
       </cd-display>
-      <br>
-      <label for="genre-select">Display Genre:</label>
-      <select name="genre-select" (change)="chooseGenre($event.target.value)">
-        <option value="All">All</option>
-        <option *ngFor="#genre of getGenres()" value="{{genre}}">{{genre}}</option>
-      </select>
-      <input #artistSearchName placeholder="Search for an Artist">
-      <button (click)="artistSearch(artistSearchName)">Search</button>
-      <button *ngIf="displayArtist!='All'" (click)="cancelArtistSearch()">Cancel Search</button>
+    </div>
+    <hr>
+    <br>
+    <label for="genre-select">Display Genre:</label>
+    <select class="form-control" name="genre-select" (change)="chooseGenre($event.target.value)">
+      <option value="All">All</option>
+      <option *ngFor="#genre of getGenres()" value="{{genre}}">{{genre}}</option>
+    </select>
+    <label for="search-artist">Search for an Artist:</label>
+    <input class="form-control" #artistSearchName name="search-artist">
+    <button class="btn btn-sm" (click)="artistSearch(artistSearchName)">Search</button>
+    <button class="btn btn-sm" *ngIf="displayArtist!='All'" (click)="cancelArtistSearch()">Cancel Search</button>
     <hr>
     `
 })
